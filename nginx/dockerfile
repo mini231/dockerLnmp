@@ -1,0 +1,2 @@
+FROM hub.c.163.com/library/nginx:stable
+EXPOSE 80 443

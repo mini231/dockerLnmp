@@ -1,0 +1,1 @@
+source-list 文件是网易的镜像源，用于apt-get update加速使用，不然用官方源会非常的慢

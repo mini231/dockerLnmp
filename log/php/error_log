@@ -1,0 +1,4 @@
+[02-Nov-2017 08:32:04 UTC] PHP Fatal error:  Uncaught Error: Class 'tesst' not found in /var/www/html/test.php:22
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/test.php on line 22

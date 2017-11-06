@@ -1,0 +1,26 @@
+version: "2"
+services: 
+  nginx:
+    build:
+      context: ~/dockerLnmp/nginx
+      dockerfile: dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ~/dockerLnmp/www/:/usr/share/nginx/html/:rw
+      - ~/dockerLnmp/conf/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ~/dockerLnmp/log/nginx/:/var/log/nginx/:rw
+    links:
+      - php7
+
+  php7:
+    build:
+      context: ~/dockerLnmp/php7
+      dockerfile: dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ~/dockerLnmp/www/:/var/www/html/:rw
+      - ~/dockerLnmp/conf/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
+      - ~/dockerLnmp/conf/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:rw
+      - ~/dockerLnmp/log/php/:/var/log/php/:rw 
